@@ -1,0 +1,18 @@
+ExpNav {
+    padding: 1;
+}
+
+Overview {
+    height: auto;
+    max-width: 100%;
+    overflow-x: hidden;
+    margin-bottom: 1;
+}
+
+TextBox.content-text {
+    margin-top: 1;
+    margin-bottom: 1;
+}
+TextBox.title-text {
+    background: lightblue 20%;
+}
