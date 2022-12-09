@@ -13,6 +13,7 @@ Requires at least python3.10.
 # Usage
 
 ```
+python -m expnav <path to experments folder>
 ```
 
 The folder is expected to have the following structure:
