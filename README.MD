@@ -37,7 +37,7 @@ The app shows a tree of all experiments with their ancestors. Detail views for t
 experiments show the documentation text from `meta.txt`, their logs, and a diff wrt to the
 parent model.
 
-![screenshot](screenshots.png)
+![screenshot](screenshot.png)
 
 
 # Installation
