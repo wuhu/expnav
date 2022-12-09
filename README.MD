@@ -1,5 +1,15 @@
 This is a very simple textual app for browsing a folder with deep learning experiments.
 
+Use at your own risk.
+
+# Installation
+
+```
+pip install -r requirements.txt
+```
+
+Requires at least python3.10.
+
 # Usage
 
 ```
@@ -38,12 +48,3 @@ experiments show the documentation text from `meta.txt`, their logs, and a diff 
 parent model.
 
 ![screenshot](screenshot.png)
-
-
-# Installation
-
-```
-pip install -r requirements.txt
-```
-
-Requires at least python3.10.
