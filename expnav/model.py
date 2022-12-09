@@ -87,14 +87,14 @@ def _rich_tree_lines(tree):
 
 
 def parse_meta(string):
-    '''Parse a meta string formatted like this:
+    """Parse a meta string formatted like this:
 
         parent: ...
 
         [... doc ...]
 
     and return a dict {'parent': ..., 'doc': ...}
-    '''
+    """
     string = string.strip()
     parent_line, doc_lines = string.split('\n', 1)
     parent = parent_line.split('parent:')[1].strip()
@@ -127,14 +127,21 @@ class Experiment:
     def read(self, folder, collection):
         name = folder.name
 
-        with open(folder / 'meta.txt') as f:
-            meta = parse_meta(f.read())
+        try:
+            with open(folder / 'meta.txt') as f:
+                meta = parse_meta(f.read())
 
-        parent = meta['parent']
-        doc = meta['doc']
+            parent = meta['parent']
+            doc = meta['doc']
+        except FileNotFoundError:
+            parent = None
+            doc = ''
 
-        with open(folder / 'log.txt') as f:
-            metrics = parse_metrics(f.read())
+        try:
+            with open(folder / 'log.txt') as f:
+                metrics = parse_metrics(f.read())
+        except FileNotFoundError:
+            metrics = ''
 
         return Experiment(name, doc, parent, metrics, collection)
 
